@@ -3,8 +3,13 @@
     <div class="col-xs-12">
       <H3>im in the appcomponent</H3>
       <hr>
-      <app-servers></app-servers>
-
+     <!--  <app-servers></app-servers> -->
+     <button class="btn btn-success"
+     (click)="onToggleDetails()">Display Details</button>
+     <p *ngIf="showSecret">Secret Password=Tuna</p>
+     <div *ngFor="let logItem of log; let i = index"
+     [ngStyle]="{backgroundColor: i>=4?'blue':'transparent'}"
+     [ngClass]="{'white-text':i>=4}">{{logItem}}</div>
     </div>
   </div>
 </div>
