@@ -1,15 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <H3>im in the appcomponent</H3>
+      <H3>APP Component</H3>
       <hr>
      <!--  <app-servers></app-servers> -->
-     <button class="btn btn-success"
+     <!-- <button class="btn btn-success"
      (click)="onToggleDetails()">Display Details</button>
      <p *ngIf="showSecret">Secret Password=Tuna</p>
      <div *ngFor="let logItem of log; let i = index"
      [ngStyle]="{backgroundColor: i>=4?'blue':'transparent'}"
-     [ngClass]="{'white-text':i>=4}">{{logItem}}</div>
+     [ngClass]="{'white-text':i>=4}">{{logItem}}</div> -->
+
+    <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+    <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+    <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
     </div>
   </div>
 </div>
